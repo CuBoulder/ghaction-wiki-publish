@@ -1,0 +1,21 @@
+name: "Wiki Publish Action"
+description: "This action deploys a markdown documentation directory to a Github Wiki, as well as creating a table of contents and sidebar."
+
+inputs:
+  GH_TOKEN:
+    description: "GitHub Token"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Update sidebar
+      shell: bash
+      run: ${{ github.action_path }}/publish.py
+      env:
+        GH_TOKEN: ${{ inputs.GH_TOKEN }}
+
+
+branding:
+  icon: "book-open"
+  color: "purple"
