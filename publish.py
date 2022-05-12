@@ -10,7 +10,7 @@ import shutil
 docroot = 'base_repo/docs'
 wikiroot = 'wiki'
 
-gh_repo = 'https://' + os.environ['GITHUB_ACTOR'] + '@github.com/' + os.environ['GITHUB_REPOSITORY'] + ".git"
+gh_repo = 'https://' + os.environ['GITHUB_ACTOR'] + ':' + os.environ['GH_TOKEN'] + '@github.com/' + os.environ['GITHUB_REPOSITORY'] + ".git"
 gh_wiki_repo = 'https://' + os.environ['GITHUB_ACTOR'] + ':' + os.environ['GH_TOKEN'] + '@github.com/' + os.environ['GITHUB_REPOSITORY'] + ".wiki.git"
 
 # Create working directory
