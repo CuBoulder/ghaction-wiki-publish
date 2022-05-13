@@ -83,13 +83,13 @@ for item in toc:
         for _ in range(item['depth']):
             tocstring += '  '
         if item['path'] != None:
-            tocstring += f'* [{item["title"]}]' + '({item["path"]})'.replace(' ', '-')
+            tocstring += f'* [{item["title"]}]' + f'({item["path"]})'.replace(' ', '-')
         else:
             tocstring += f'* **{item["title"]}**'
     else:
         for _ in range(item['depth']):
             tocstring += '  '
-        tocstring += f'* [{item["title"]}]' + '({item["path"]})'.replace(' ', '-')
+        tocstring += f'* [{item["title"]}]' + f'({item["path"]})'.replace(' ', '-')
     tocstring += '\n'
 
 with open(Path(wikiroot, '_Sidebar.md'), 'w') as outfile:
